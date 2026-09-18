@@ -1,11 +1,2 @@
 # Ecole Indirecte 
-:/
-
-test
-
-
-git add . = l'ajouter pour l'envoyer
-
-git commit -m "mon commentaire" = l'ajouter au repo local
-
-git push = l'envoyer sur github
+Ecole Indirecte est une application mobile pour les étudiants, elle sert à moduler à la convenance de l'étudiant et de pouvoir discuter en directe avec les autres !
