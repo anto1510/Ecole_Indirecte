@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./ecoleindirecte.png" alt="logo" width="100%">
+  <img src="./ecole_indirecte.png" alt="logo" width="100%">
 </p>
 
 # Ecole Indirecte :
