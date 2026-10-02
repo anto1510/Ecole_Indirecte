@@ -19,7 +19,7 @@ Dans ce projet, nous distinguons plusieurs types d'utilisateurs :
 
 ---
 
-## onctionnalités proposées
+## Fonctionnalités proposées
 
 Voici les fonctionnalités pour chaque type d'utilisateur : 
 
