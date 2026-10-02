@@ -48,4 +48,20 @@ De plus, la possibilité de personnaliser l'interface de l'application permet un
 
 ---
 
+## Technologies
+
+### Version Légère (Client Web)
+
+* **MariaDB (Base de données SQL)** : Pour la gestion et le stockage des données de l'application.
+* **PHP** : Pour développer le côté serveur (backend) et les fonctionnalités dont nous avons besoin. 
+* **JavaScript** : Pour rendre le site dynamique et interactif côté utilisateur.
+* **HTML et CSS** : Ces langages constituent tout simplement la base pour structurer et habiller notre site web. 
+
+### Version Lourde (Client Mobile)
+
+* **Flutter** : Ce framework polyvalent permet de développer et de compiler l'application pour plusieurs systèmes d'exploitation, comme iOS et Android, à partir d'une seule et même base de code.
+
+
+
+
 
