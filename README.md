@@ -55,34 +55,39 @@ Ce projet est réalisé dans le cadre de notre formation en **BTS SIO option SLA
 
 ## Client Lourd (Application Mobile) :
 
+### Par qui ce logiciel sera-t-il utilisé ?
+
+Dans cette partie du projet, nous avons un type d'utilisateur: 
+
+* **Les Étudiants**
+
 ### Pourquoi ce projet ?
 
 Ce projet a été pensé pour accompagner au mieux les étudiants dans leur vie au lycée. L'objectif est de leur permettre de s'organiser efficacement entre leurs études et leur vie personnelle, notamment grâce à la modification personnalisée de l'emploi du temps.
 
 De plus, la possibilité de personnaliser l'interface de l'application permet un accès plus rapide aux informations essentielles. Par exemple, un élève qui consulte systématiquement son emploi du temps en ouvrant l'application pourra choisir de l'afficher directement sur sa page d'accueil.
 
-### Par qui ce logiciel sera-t-il utilisé ?
 
-Dans cette partie du projet, nous distinguons deux types d'utilisateurs :
-* **Les Etudiants**
-* **Les Professeurs** (Qui seront définis dans des comptes spécifiques)
+
 
 ---
 
 ## Client Léger (Application Web) :
 
-### Pourquoi ce projet ?
-
-Cette interface va être utilisée par les administrateurs et les professeurs.
-
-Dans le cadre de notre projet de BTS SIO, nous devons obligatoirement concevoir deux types d’applications : un client lourd et un client léger. Nous avons fait le choix de développer un client lourd pour les professeurs et les étudiants, car ces utilisateurs consulteront l'outil principalement sur smartphone. Par conséquent, une application légère, accessible directement depuis un navigateur web, nous a semblé beaucoup plus adaptée aux besoins de gestion des administrateurs et du support technique.
-
 ### Par qui ce logiciel sera-t-il utilisé ?
 
 * **Les Administrateurs**
-* **Les Supports techniques ( Optionnel)** 
-* **Les Professeurs**
-* **Les Etudiants**
+* **Étudiant** 
+
+### Pourquoi ce projet ?
+
+Cette interface va être utilisée par les administrateurs.
+
+Dans le cadre de notre projet de BTS SIO, nous devons obligatoirement concevoir deux types d’applications : un client lourd et un client léger. Nous avons fait le choix de développer un client lourd les étudiants, car ces utilisateurs consulteront l'outil principalement sur smartphone. Par conséquent, une application légère, accessible directement depuis un navigateur web, nous a semblé beaucoup plus adaptée aux besoins de gestion des administrateurs. Par contre les Etudiant auront beaucoup plus de fonctionnalité sur l'application web.  
+
+
+
+
 
 ---
 
@@ -90,11 +95,11 @@ Dans le cadre de notre projet de BTS SIO, nous devons obligatoirement concevoir 
 
 ### Contraintes :
 
-Ce projet a une contrainte technique majeure l'utilisation de l'API : Au début du projet, nous avions pour but de récupérer les informations d'École Directe via une API, malheuresement l'API d'Ecole Directe n'est pas publique et il est donc impossible pour nous de l'utiliser. Il existe bien des API créées par la communautée disponible en Open Source, mais elles ne sont malheureusement pas suffisamment fonctionnelles ou stables pour notre projet.
+Ce projet a une contrainte technique majeure l'utilisation de l'API : Au début du projet, nous avions pour but de récupérer les informations d'École Directe via une API, malheuresement **l'API d'Ecole Directe n'est pas publique** et il est donc impossible pour nous de l'utiliser. **Il existe bien des API créées par la communautée disponible en Open Source, mais elles ne sont malheureusement pas suffisamment fonctionnelles ou stables** pour notre projet.
 
 ### Solution :
 
-Pour pallier à ce problème, nous avons choisi de créer nous-mêmes nos jeux de données. Nous avons donc intégré dans notre propre base de données toutes les informations nécessaires à la simulation, telles que les emplois du temps, les notes, le cahier de textes et toutes les autres informations nécéssaires pour la bonne réalisation de notre projet.
+Pour pallier à ce problème, nous avons choisi de créer nous-mêmes nos jeux de données. Nous avons donc **intégré dans notre propre base de données** toutes les informations nécessaires à la simulation, telles que les emplois du temps, les notes, le cahier de textes et toutes les autres informations nécéssaires pour la bonne réalisation de notre projet.
 
 ---
 
@@ -107,10 +112,10 @@ Voici les fonctionnalités prévues pour chaque type d'utilisateur, certaines fo
 * Accès simplifié à l'emploi du temps.
 * Interface modulable (ex: possibilité de mettre l'emploi du temps en page d'accueil).
 * Ajout d'heures personnelles dans l'emploi du temps.
-* Notifications en cas de changement d'emploi du temps.
+* Notifications en cas de changement d'emploi du temps, nouvelle note, information. 
 * Chat de discussion privé entre classes.
-* Système de tickets (Support) en cas de problème avec le logiciel **(Optionnel)**.
-* Consultation du menu du jour au self.
+
+
 
 **L'administrateur aura accès aux fonctionnalités suivantes (Client Léger) :**
 * Gestion du support de l'application (accès, lecture et réponse aux tickets étudiants).
@@ -122,22 +127,6 @@ Voici les fonctionnalités prévues pour chaque type d'utilisateur, certaines fo
 * Envoyer des messages privés.
 * Gestion des emplois du temps.
 
-
-
-**Support informatique (Optionnel)** :
-* Gestion des tickets (modification, Création, Supression, Archiver)
-* consulter liste des tickets
-* Répondre aux tickets
-
-
-**Les professeurs auront accès aux fonctionnalités suivantes (Client Lourd et Léger) :**
-* Accès aux discussions de groupe (si un groupe incluant des élèves a été créé).
-* Créer des devoirs.
-* Envoyer des messages privés ou générales.
-* Supprimer des devoirs.
-* Accès à l'emploi du temps.
-* Consulter le menu du self.
-* Système de tickets en cas de problème.**(Optionnel)**
 ---
 
 ## Technologies utilisées :
@@ -154,3 +143,41 @@ Voici les fonctionnalités prévues pour chaque type d'utilisateur, certaines fo
 * **Flutter :**  Ce framework polyvalent permet de développer et de compiler l'application pour plusieurs systèmes d'exploitation (comme iOS et Android) à partir d'une seule et même base de code.
 * **Dart :** En nous basant sur le framework Flutter, pour programmer une grande partie de notre application.
 * **PHP :**  Pour développer le côté serveur (backend) et la logique métier, nous allons utiliser le language Php grâce aux cours que nous avons eux l'année dernière.
+
+
+
+## Base de données
+
+**Utilisateur**: il seras définit par son **Id**, **son rôle (administrateur, Étudiant)**, **nom**, **prénom**, **nom d'utilisateur**, **mot de passe**, **ID Formation**, **Id emplois du temps**,**id classe** 
+
+**Formation**: Une formation seras définit par un **id de formation**, un **id de classe**, et **l'année Scolaire**. 
+
+**Classe**: La classe seras définit par un **id classe** (qui permet de définir une classe comme il existe plusieur classe différente), et le **nom de la classe** avec l'option.
+
+
+**Emplois du temps**: **id Emploi du temps**,**Matière**, **Durée (heure)**, **Le jour**,**ID Classe (clé étrangère)**
+
+
+
+
+
+
+
+
+
+---
+
+## Comment faire évoluer le projet ? 
+
+### Rajout acteur
+
+* Professeur 
+* BDE (envoyer d'information consernée le BDE)
+* Support technique
+
+### Ajout de fonctionnalité
+
+* Accès au planing cantine 
+* Mot de passe oublié 
+* Possibilité d'envoyer des tickets pour les étudiants: 
+  * Un ticket est créer avec les informations d'un **titre** de l'incident, **la date** de l'incident, la **description** de l'incident, **Thème** de l'incident (le thème vaut l'importance de l'incident)
