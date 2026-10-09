@@ -128,15 +128,25 @@ Voici les fonctionnalités prévues pour chaque type d'utilisateur, certaines fo
 * Gestion des emplois du temps.
 
 
-## Shéma Fonctionnalité
+## Schéma Fonctionnalité
 
 ### Léger 
 
-[text](schema/Diagramme_des_cas_utilisations_leger_V2.uxf)
+![alt text](schema/Schema_Fonctionnalite_Leger.jpeg)
 
 ### Lourd 
 
-[text](schema/Diagramme_des_cas_utilisations_lourd_V2.uxf)
+![alt text](schema/Schema_Fonctionnalite_Lourd.png)
+
+## UML
+
+### Léger 
+
+![alt text](schema/leger.png)
+
+### Lourd 
+![alt text](schema/lourd.png)
+
 ---
 
 ## Technologies utilisées :
