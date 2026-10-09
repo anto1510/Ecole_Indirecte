@@ -127,6 +127,16 @@ Voici les fonctionnalités prévues pour chaque type d'utilisateur, certaines fo
 * Envoyer des messages privés.
 * Gestion des emplois du temps.
 
+
+## Shéma Fonctionnalité
+
+### Léger 
+
+[text](schema/Diagramme_des_cas_utilisations_leger_V2.uxf)
+
+### Lourd 
+
+[text](schema/Diagramme_des_cas_utilisations_lourd_V2.uxf)
 ---
 
 ## Technologies utilisées :
