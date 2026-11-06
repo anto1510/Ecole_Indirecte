@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./Logo_indirecte.png" alt="logo" width="100%">
+  <img src="./Image/Logo_indirecte.png" alt="logo" width="100%">
 </p>
 
 
@@ -83,7 +83,7 @@ De plus, la possibilité de personnaliser l'interface de l'application permet un
 
 Cette interface va être utilisée par les administrateurs.
 
-Dans le cadre de notre projet de BTS SIO, nous devons obligatoirement concevoir deux types d’applications : un client lourd et un client léger. Nous avons fait le choix de développer un client lourd les étudiants, car ces utilisateurs consulteront l'outil principalement sur smartphone. Par conséquent, une application légère, accessible directement depuis un navigateur web, nous a semblé beaucoup plus adaptée aux besoins de gestion des administrateurs. Par contre les Etudiant auront beaucoup plus de fonctionnalité sur l'application web.  
+Dans le cadre de notre projet de BTS SIO, nous devons obligatoirement concevoir deux types d’applications : un client lourd et un client léger. Nous avons fait le choix de développer un client lourd pour les étudiants, car ces utilisateurs consulteront l'outil principalement sur smartphone. Par conséquent, une application légère, accessible directement depuis un navigateur web, nous a semblé beaucoup plus adaptée aux besoins de gestion des administrateurs. Par contre les Etudiant auront beaucoup moins de fonctionnalité sur l'application web.  
 
 
 
@@ -95,7 +95,7 @@ Dans le cadre de notre projet de BTS SIO, nous devons obligatoirement concevoir 
 
 ### Contraintes :
 
-Ce projet a une contrainte technique majeure l'utilisation de l'API : Au début du projet, nous avions pour but de récupérer les informations d'École Directe via une API, malheuresement **l'API d'Ecole Directe n'est pas publique** et il est donc impossible pour nous de l'utiliser. **Il existe bien des API créées par la communautée disponible en Open Source, mais elles ne sont malheureusement pas suffisamment fonctionnelles ou stables** pour notre projet.
+Ce projet a une contrainte technique majeure l'utilisation de l'API : Au début du projet, nous avions pour but de récupérer les informations d'École Directe via une API, malheureusement **l'API d'Ecole Directe n'est pas publique** et il est donc impossible pour nous de l'utiliser. **Il existe bien des API créées par la communautée disponible en Open Source, mais elles ne sont malheureusement pas suffisamment fonctionnelles ou stables** pour notre projet.
 
 ### Solution :
 
@@ -105,29 +105,64 @@ Pour pallier à ce problème, nous avons choisi de créer nous-mêmes nos jeux d
 
 ## Fonctionnalités proposées :
 
-Voici les fonctionnalités prévues pour chaque type d'utilisateur, certaines fonctionnalitées sont marquées en optionnel car elle ne sont pas prioritaires dans notre projet initial :
+### Lourd 
+
+Voici les fonctionnalités prévues pour chaque type d'utilisateur : 
 
 
 **L'étudiant aura accès aux fonctionnalités suivantes (Client Lourd) :**
-* Accès simplifié à l'emploi du temps.
 * Interface modulable (ex: possibilité de mettre l'emploi du temps en page d'accueil).
 * Ajout d'heures personnelles dans l'emploi du temps.
 * Notifications en cas de changement d'emploi du temps, nouvelle note, information. 
-* Chat de discussion privé entre classes.
+* Consulter les notes. 
+* Consulter les messages : 
+  * Créer un groupe 
+  * Envoyer des fichiers
+  * Envoyer des messages
 
 
+**L'administrateur n'aura aucune fonctionnalités sur le client Lourd**
+
+
+![alt text](Image/Diagramme_Fonctionnalité/Schema_Fonctionnalite_Lourd.png)
+
+![alt text](Image/Diagramme_D'utilisation_lourd.png)
+
+
+
+### Léger 
 
 **L'administrateur aura accès aux fonctionnalités suivantes (Client Léger) :**
+
 * Gestion du support de l'application (accès, lecture et réponse aux tickets étudiants).
 * Accès à certaines données confidentielles (sous réserve des droits et rôles accordés).
-* Gestion des utilisateur.
+* Gestion des utilisateurs.
 * Gestion des rôles et permissions.
-* consultations des logs.
-* Envoie messages générales.
+* Consultation des logs.
+* Envoi messages générales.
 * Envoyer des messages privés.
 * Gestion des emplois du temps.
 
+
+**L'étudiant aura accès aux fonctionnalités suivantes (Client Léger) :**
+
+*Consulter l'Emploi du temps 
+* Consulter les messages : 
+  * Créer un groupe 
+  * Envoyer des fichiers
+  * Envoyer des messages
+
+![alt text](Image/Diagramme_Fonctionnalité/Schema_Fonctionnalite_Leger.png)
+
+
+![alt text](Image/Diagramme_D'utilisation_léger.png)
+
+
+
+
 ---
+
+
 
 ## Technologies utilisées :
 
@@ -145,23 +180,21 @@ Voici les fonctionnalités prévues pour chaque type d'utilisateur, certaines fo
 * **PHP :**  Pour développer le côté serveur (backend) et la logique métier, nous allons utiliser le language Php grâce aux cours que nous avons eux l'année dernière.
 
 
+---
 
 ## Base de données
 
-**Utilisateur**: il seras définit par son **Id**, **son rôle (administrateur, Étudiant)**, **nom**, **prénom**, **nom d'utilisateur**, **mot de passe**, **ID Formation**, **Id emplois du temps**,**id classe** 
+* Utilisateur : Représenté par son nom, son prénom, son numéro de téléphone, son numéro d'étudiant, un identifiant de connexion, un mot de passe et son rôle.
+*	Note : Définie par un identifiant unique (id_note), sa valeur, son coefficient, une appréciation, la matière évaluée et la date d'évaluation.
 
-**Formation**: Une formation seras définit par un **id de formation**, un **id de classe**, et **l'année Scolaire**. 
+* Classe : Identifiée par le nom de la classe (nom_classe) et un identifiant unique (id_classe).
 
-**Classe**: La classe seras définit par un **id classe** (qui permet de définir une classe comme il existe plusieur classe différente), et le **nom de la classe** avec l'option.
-
-
-**Emplois du temps**: **id Emploi du temps**,**Matière**, **Durée (heure)**, **Le jour**,**ID Classe (clé étrangère)**
+* Message : Caractérisé par un identifiant unique (id_message), son contenu et sa date d'envoi.
 
 
+* Établissement : Décrit par sa ville, sa région, son académie, son numéro de téléphone et le nom de l'établissement.
 
-
-
-
+* Emploi_du_temps : Composé de la matière, du jour, de l'heure de début, de l'heure de fin, de la salle de cours et d'un identifiant unique (id_emploi_du_temps).
 
 
 
@@ -181,6 +214,19 @@ Voici les fonctionnalités prévues pour chaque type d'utilisateur, certaines fo
 * Mot de passe oublié 
 * Possibilité d'envoyer des tickets pour les étudiants: 
   * Un ticket est créer avec les informations d'un **titre** de l'incident, **la date** de l'incident, la **description** de l'incident, **Thème** de l'incident (le thème vaut l'importance de l'incident)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
